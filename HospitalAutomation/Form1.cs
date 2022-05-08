@@ -19,7 +19,7 @@ namespace HospitalAutomation
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Test 2");
+            MessageBox.Show("Test 3");
         }
     }
 }
