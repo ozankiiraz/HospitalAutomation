@@ -125,12 +125,13 @@ namespace HospitalAutomation
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(444, 24);
             this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 359);
+            this.ClientSize = new System.Drawing.Size(489, 359);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);

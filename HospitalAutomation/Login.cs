@@ -19,11 +19,12 @@ namespace HospitalAutomation
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Test 4");
-            MessageBox.Show("OZAN MBOX");
-            MessageBox.Show("Test 1");
+            
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

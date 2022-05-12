@@ -40,20 +40,19 @@ namespace HospitalAutomation
             this.txt_ad = new System.Windows.Forms.TextBox();
             this.txt_soyad = new System.Windows.Forms.TextBox();
             this.txt_telno = new System.Windows.Forms.TextBox();
-            this.radio_kadin = new System.Windows.Forms.RadioButton();
-            this.radio_erkek = new System.Windows.Forms.RadioButton();
             this.dtp_dt = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbx_cinsiyet = new System.Windows.Forms.ComboBox();
             this.btn_kaydet = new System.Windows.Forms.Button();
             this.btn_düzenle = new System.Windows.Forms.Button();
             this.btn_sil = new System.Windows.Forms.Button();
             this.btn_temizle = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_hastatc = new System.Windows.Forms.TextBox();
-            this.btn_hasta_ara = new System.Windows.Forms.Button();
-            this.lbl_soyadara = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbl_soyadara = new System.Windows.Forms.Label();
+            this.btn_hasta_ara = new System.Windows.Forms.Button();
+            this.txt_hastatc = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -150,28 +149,6 @@ namespace HospitalAutomation
             this.txt_telno.Size = new System.Drawing.Size(200, 22);
             this.txt_telno.TabIndex = 10;
             // 
-            // radio_kadin
-            // 
-            this.radio_kadin.AutoSize = true;
-            this.radio_kadin.Location = new System.Drawing.Point(161, 220);
-            this.radio_kadin.Name = "radio_kadin";
-            this.radio_kadin.Size = new System.Drawing.Size(70, 21);
-            this.radio_kadin.TabIndex = 11;
-            this.radio_kadin.TabStop = true;
-            this.radio_kadin.Text = "Kadın";
-            this.radio_kadin.UseVisualStyleBackColor = true;
-            // 
-            // radio_erkek
-            // 
-            this.radio_erkek.AutoSize = true;
-            this.radio_erkek.Location = new System.Drawing.Point(249, 220);
-            this.radio_erkek.Name = "radio_erkek";
-            this.radio_erkek.Size = new System.Drawing.Size(70, 21);
-            this.radio_erkek.TabIndex = 12;
-            this.radio_erkek.TabStop = true;
-            this.radio_erkek.Text = "Erkek";
-            this.radio_erkek.UseVisualStyleBackColor = true;
-            // 
             // dtp_dt
             // 
             this.dtp_dt.Location = new System.Drawing.Point(161, 172);
@@ -182,12 +159,11 @@ namespace HospitalAutomation
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Bisque;
+            this.groupBox1.Controls.Add(this.cbx_cinsiyet);
             this.groupBox1.Controls.Add(this.txt_tc);
             this.groupBox1.Controls.Add(this.dtp_dt);
             this.groupBox1.Controls.Add(this.lbl_tcno);
-            this.groupBox1.Controls.Add(this.radio_erkek);
             this.groupBox1.Controls.Add(this.lbl_ad);
-            this.groupBox1.Controls.Add(this.radio_kadin);
             this.groupBox1.Controls.Add(this.lbl_soyad);
             this.groupBox1.Controls.Add(this.txt_telno);
             this.groupBox1.Controls.Add(this.lbl_dt);
@@ -204,6 +180,18 @@ namespace HospitalAutomation
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hasta Kayıt";
+            // 
+            // cbx_cinsiyet
+            // 
+            this.cbx_cinsiyet.FormattingEnabled = true;
+            this.cbx_cinsiyet.Items.AddRange(new object[] {
+            "Erkek",
+            "Kadın",
+            "Belirtmek İstemiyor"});
+            this.cbx_cinsiyet.Location = new System.Drawing.Point(161, 220);
+            this.cbx_cinsiyet.Name = "cbx_cinsiyet";
+            this.cbx_cinsiyet.Size = new System.Drawing.Size(200, 24);
+            this.cbx_cinsiyet.TabIndex = 14;
             // 
             // btn_kaydet
             // 
@@ -266,31 +254,12 @@ namespace HospitalAutomation
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hasta Arama";
             // 
-            // label7
+            // textBox1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 38);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 17);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "T.C No : ";
-            // 
-            // txt_hastatc
-            // 
-            this.txt_hastatc.Location = new System.Drawing.Point(9, 58);
-            this.txt_hastatc.Name = "txt_hastatc";
-            this.txt_hastatc.Size = new System.Drawing.Size(164, 22);
-            this.txt_hastatc.TabIndex = 1;
-            // 
-            // btn_hasta_ara
-            // 
-            this.btn_hasta_ara.Location = new System.Drawing.Point(6, 182);
-            this.btn_hasta_ara.Name = "btn_hasta_ara";
-            this.btn_hasta_ara.Size = new System.Drawing.Size(75, 37);
-            this.btn_hasta_ara.TabIndex = 2;
-            this.btn_hasta_ara.Text = "ARA";
-            this.btn_hasta_ara.UseVisualStyleBackColor = true;
+            this.textBox1.Location = new System.Drawing.Point(9, 132);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(161, 22);
+            this.textBox1.TabIndex = 4;
             // 
             // lbl_soyadara
             // 
@@ -301,19 +270,38 @@ namespace HospitalAutomation
             this.lbl_soyadara.TabIndex = 3;
             this.lbl_soyadara.Text = "Soyad :";
             // 
-            // textBox1
+            // btn_hasta_ara
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 132);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 22);
-            this.textBox1.TabIndex = 4;
+            this.btn_hasta_ara.Location = new System.Drawing.Point(6, 182);
+            this.btn_hasta_ara.Name = "btn_hasta_ara";
+            this.btn_hasta_ara.Size = new System.Drawing.Size(75, 37);
+            this.btn_hasta_ara.TabIndex = 2;
+            this.btn_hasta_ara.Text = "ARA";
+            this.btn_hasta_ara.UseVisualStyleBackColor = true;
+            // 
+            // txt_hastatc
+            // 
+            this.txt_hastatc.Location = new System.Drawing.Point(9, 58);
+            this.txt_hastatc.Name = "txt_hastatc";
+            this.txt_hastatc.Size = new System.Drawing.Size(164, 22);
+            this.txt_hastatc.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 17);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "T.C No : ";
             // 
             // HastaKayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(678, 384);
+            this.ClientSize = new System.Drawing.Size(685, 390);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_temizle);
             this.Controls.Add(this.btn_sil);
@@ -344,8 +332,6 @@ namespace HospitalAutomation
         private System.Windows.Forms.TextBox txt_ad;
         private System.Windows.Forms.TextBox txt_soyad;
         private System.Windows.Forms.TextBox txt_telno;
-        private System.Windows.Forms.RadioButton radio_kadin;
-        private System.Windows.Forms.RadioButton radio_erkek;
         private System.Windows.Forms.DateTimePicker dtp_dt;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_kaydet;
@@ -358,5 +344,6 @@ namespace HospitalAutomation
         private System.Windows.Forms.Button btn_hasta_ara;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbl_soyadara;
+        private System.Windows.Forms.ComboBox cbx_cinsiyet;
     }
 }
