@@ -53,6 +53,7 @@
     <Compile Include="DoctorUI.Designer.cs">
       <DependentUpon>DoctorUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ilac.cs" />
     <Compile Include="Prescription.cs">
       <SubType>Form</SubType>
     </Compile>
