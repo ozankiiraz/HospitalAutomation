@@ -17,6 +17,9 @@ namespace HospitalAutomation
             InitializeComponent();
         }
 
+        private void DoctorUI_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
