@@ -18,12 +18,38 @@ namespace HospitalAutomation
         {
             InitializeComponent();
         }
+        //DEĞİŞKENLER   DEĞİŞKENLER     DEĞİŞKENLER     DEĞİŞKENLER     DEĞİŞKENLER     DEĞİŞKENLER     DEĞİŞKENLER     DEĞİŞKENLER
 
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Hastane"].ConnectionString);
         DataSet PrescriptionTablolar = new DataSet();
+        int receteIndex;
         int medicineID;
+        int silinecekID;
         string medicineName;
+        List<Ilac> ilacListe = new List<Ilac>();
+        int index;
 
+        //METOTLAR  METOTLAR    METOTLAR    METOTLAR    METOTLAR    METOTLAR    METOTLAR    METOTLAR    METOTLAR    METOTLAR    METOTLAR    
+        private int Sil()
+        {
+            foreach (var item in ilacListe)
+            {
+                if (item.ID == silinecekID)
+                {
+                    index = ilacListe.IndexOf(item);
+                }
+            }
+            return index;
+        }
+
+        private void Getir()
+        {
+            dataGridViewRecete.DataSource = ilacListe;
+            //dataGridViewRecete.Columns[0].Visible = false;
+            //dataGridViewRecete.Columns[1].Visible = false; 
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------
         private void Prescription_Load(object sender, EventArgs e)
         {
             SqlDataAdapter ilaclar = new SqlDataAdapter("SELECT MedicineID,MedicineName FROM Medicines where [Status]=1", con);
@@ -37,24 +63,43 @@ namespace HospitalAutomation
         {
             medicineID = Convert.ToInt32(dataGridViewIlaclar.CurrentRow.Cells[0].Value);
             medicineName = dataGridViewIlaclar.CurrentRow.Cells[1].Value.ToString();
-            MessageBox.Show(medicineID.ToString());
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)          //EKLE BUTONU
         {
-            //SqlDataAdapter ilaclar2 = new SqlDataAdapter("SELECT MedicineID,MedicineName FROM Medicines where [Status]=1 and MedicineID=@medicineId", con);
-            //DataTable dt = new DataTable();
-            //ilaclar2.SelectCommand.Parameters.AddWithValue("@medicineId", medicineID);
-            //ilaclar2.Fill(dt);
-            //dataGridViewRecete.DataSource = dt;
             dataGridViewRecete.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            List<Ilac> ilacListe = new List<Ilac>();
+            dataGridViewRecete.DataSource = null;
+            receteIndex++;
             Ilac i = new Ilac();
-            i.ID = 1;
+            i.ID = receteIndex;
             i.MedicineId = medicineID;
             i.MedicineName = medicineName;
             ilacListe.Add(i);
+            Getir();
+        }
 
+        private void button2_Click(object sender, EventArgs e)          //ÇIKAR BUTONU          HATALI  HATALI  HATALI  HATALI
+        {
+            try
+            {
+                ilacListe.RemoveAt(Sil());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            receteIndex = 0;
+            this.Close();
+        }
+
+        private void dataGridViewRecete_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            silinecekID=Convert.ToInt32(dataGridViewRecete.Rows[e.RowIndex].Cells[0].Value);
+            MessageBox.Show(silinecekID.ToString());
         }
     }
 }
