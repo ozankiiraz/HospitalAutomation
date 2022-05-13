@@ -42,7 +42,6 @@ namespace HospitalAutomation
             this.txt_telno = new System.Windows.Forms.TextBox();
             this.dtp_dt = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbx_cinsiyet = new System.Windows.Forms.ComboBox();
             this.btn_kaydet = new System.Windows.Forms.Button();
             this.btn_düzenle = new System.Windows.Forms.Button();
             this.btn_sil = new System.Windows.Forms.Button();
@@ -53,6 +52,8 @@ namespace HospitalAutomation
             this.btn_hasta_ara = new System.Windows.Forms.Button();
             this.txt_hastatc = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -159,7 +160,8 @@ namespace HospitalAutomation
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Bisque;
-            this.groupBox1.Controls.Add(this.cbx_cinsiyet);
+            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.txt_tc);
             this.groupBox1.Controls.Add(this.dtp_dt);
             this.groupBox1.Controls.Add(this.lbl_tcno);
@@ -180,18 +182,6 @@ namespace HospitalAutomation
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hasta Kayıt";
-            // 
-            // cbx_cinsiyet
-            // 
-            this.cbx_cinsiyet.FormattingEnabled = true;
-            this.cbx_cinsiyet.Items.AddRange(new object[] {
-            "Erkek",
-            "Kadın",
-            "Belirtmek İstemiyor"});
-            this.cbx_cinsiyet.Location = new System.Drawing.Point(161, 220);
-            this.cbx_cinsiyet.Name = "cbx_cinsiyet";
-            this.cbx_cinsiyet.Size = new System.Drawing.Size(200, 24);
-            this.cbx_cinsiyet.TabIndex = 14;
             // 
             // btn_kaydet
             // 
@@ -278,6 +268,7 @@ namespace HospitalAutomation
             this.btn_hasta_ara.TabIndex = 2;
             this.btn_hasta_ara.Text = "ARA";
             this.btn_hasta_ara.UseVisualStyleBackColor = true;
+            this.btn_hasta_ara.Click += new System.EventHandler(this.btn_hasta_ara_Click);
             // 
             // txt_hastatc
             // 
@@ -296,12 +287,32 @@ namespace HospitalAutomation
             this.label7.TabIndex = 0;
             this.label7.Text = "T.C No : ";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(161, 220);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(71, 21);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.Text = "Erkek";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(274, 220);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(71, 21);
+            this.checkBox2.TabIndex = 16;
+            this.checkBox2.Text = "Kadın";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // HastaKayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(685, 390);
+            this.ClientSize = new System.Drawing.Size(987, 390);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_temizle);
             this.Controls.Add(this.btn_sil);
@@ -310,7 +321,6 @@ namespace HospitalAutomation
             this.Controls.Add(this.btn_kaydet);
             this.Name = "HastaKayit";
             this.Text = "HastaKayit";
-            this.Load += new System.EventHandler(this.HastaKayit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -344,6 +354,7 @@ namespace HospitalAutomation
         private System.Windows.Forms.Button btn_hasta_ara;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbl_soyadara;
-        private System.Windows.Forms.ComboBox cbx_cinsiyet;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
