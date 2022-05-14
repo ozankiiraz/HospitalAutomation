@@ -21,7 +21,7 @@ namespace HospitalAutomation
 
         private void PatientExaminations_Load(object sender, EventArgs e)
         {
-
+            button1.Enabled = false;
         }
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Hastane"].ConnectionString);
 
@@ -54,6 +54,18 @@ namespace HospitalAutomation
                 {
                     MessageBox.Show("TCKN 11 hane olmalıdır");
                 }
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length == 11)
+            {
+                button1.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
             }
         }
     }

@@ -59,6 +59,8 @@ namespace HospitalAutomation
             this.dataGridViewRecete.Size = new System.Drawing.Size(413, 417);
             this.dataGridViewRecete.TabIndex = 1;
             this.dataGridViewRecete.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRecete_CellClick);
+            this.dataGridViewRecete.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridViewRecete_RowsAdded);
+            this.dataGridViewRecete.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridViewRecete_RowsRemoved);
             // 
             // button1
             // 
@@ -86,7 +88,7 @@ namespace HospitalAutomation
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(1176, 57);
             this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
+            this.button3.Text = "REÇETE ONAYLA";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -115,6 +117,7 @@ namespace HospitalAutomation
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(162, 26);
             this.textBox2.TabIndex = 8;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2
             // 

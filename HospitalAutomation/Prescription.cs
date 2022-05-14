@@ -22,12 +22,15 @@ namespace HospitalAutomation
 
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Hastane"].ConnectionString);
         DataSet PrescriptionTablolar = new DataSet();
+        BindingSource PrescriptionTablolar2 = new BindingSource();
         int receteIndex;
         int medicineID;
         int silinecekID;
         string medicineName;
-        List<Ilac> ilacListe = new List<Ilac>();
+        //List<Ilac> ilacListe = new List<Ilac>();
+        BindingList<Ilac> ilacListe = new BindingList<Ilac>();
         int index;
+        string receteson;
 
         //METOTLAR  METOTLAR    METOTLAR    METOTLAR    METOTLAR    METOTLAR    METOTLAR    METOTLAR    METOTLAR    METOTLAR    METOTLAR    
         private int Sil()
@@ -42,11 +45,11 @@ namespace HospitalAutomation
             return index;
         }
 
-        private void Getir()
+        private void Getir()                            //REÇETEYİ LİSTELER.
         {
             dataGridViewRecete.DataSource = ilacListe;
-            //dataGridViewRecete.Columns[0].Visible = false;
-            //dataGridViewRecete.Columns[1].Visible = false; 
+            dataGridViewRecete.Columns[0].Visible = false;
+            dataGridViewRecete.Columns[1].Visible = false;
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------
@@ -54,9 +57,19 @@ namespace HospitalAutomation
         {
             SqlDataAdapter ilaclar = new SqlDataAdapter("SELECT MedicineID,MedicineName FROM Medicines where [Status]=1", con);
             ilaclar.Fill(PrescriptionTablolar);
-            dataGridViewIlaclar.DataSource = PrescriptionTablolar.Tables[0];
-            dataGridViewIlaclar.Columns[0].Visible = false;
+            foreach (var item in PrescriptionTablolar)
+            {
+
+            }
+
+            dataGridViewIlaclar.DataSource = PrescriptionTablolar2;
+
+            //dataGridViewIlaclar.Columns[0].Visible = false;
             dataGridViewIlaclar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewIlaclar.MultiSelect = false;
+            dataGridViewRecete.MultiSelect = false;
+            button3.Enabled = false;
+            dataGridViewIlaclar.Refresh();
         }
 
         private void dataGridViewIlaclar_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -68,7 +81,6 @@ namespace HospitalAutomation
         private void button1_Click(object sender, EventArgs e)          //EKLE BUTONU
         {
             dataGridViewRecete.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewRecete.DataSource = null;
             receteIndex++;
             Ilac i = new Ilac();
             i.ID = receteIndex;
@@ -86,20 +98,44 @@ namespace HospitalAutomation
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Lütfen bir ilaç seçiniz!!");
             }
+            Getir();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)          //REÇETE ONAYLA BUTONU. BURADA DATABASE'E VERİ EKLENİR.
         {
             receteIndex = 0;
-            this.Close();
+            foreach (var ilac in ilacListe)
+            {
+                receteson += ilac.MedicineName + "\n";
+            }
+            MessageBox.Show(receteson);
+            //this.Close();
         }
 
         private void dataGridViewRecete_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             silinecekID=Convert.ToInt32(dataGridViewRecete.Rows[e.RowIndex].Cells[0].Value);
-            MessageBox.Show(silinecekID.ToString());
+        }
+
+        private void dataGridViewRecete_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            button3.Enabled = true;
+        }
+
+        private void dataGridViewRecete_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (ilacListe.Count==0)
+            {
+                button3.Enabled = false;
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            PrescriptionTablolar2.Filter = string.Format("MedicineName LIKE '%{0}%'", textBox2.Text);
+            dataGridViewIlaclar.Refresh();
         }
     }
 }
