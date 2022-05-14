@@ -52,19 +52,13 @@ namespace HospitalAutomation
             dataGridViewRecete.Columns[1].Visible = false;
         }
 
-        //------------------------------------------------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void Prescription_Load(object sender, EventArgs e)
         {
             SqlDataAdapter ilaclar = new SqlDataAdapter("SELECT MedicineID,MedicineName FROM Medicines where [Status]=1", con);
             ilaclar.Fill(PrescriptionTablolar);
-            foreach (var item in PrescriptionTablolar)
-            {
-
-            }
-
-            dataGridViewIlaclar.DataSource = PrescriptionTablolar2;
-
-            //dataGridViewIlaclar.Columns[0].Visible = false;
+            dataGridViewIlaclar.DataSource = PrescriptionTablolar.Tables[0];
+            dataGridViewIlaclar.Columns[0].Visible = false;
             dataGridViewIlaclar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewIlaclar.MultiSelect = false;
             dataGridViewRecete.MultiSelect = false;
@@ -90,7 +84,7 @@ namespace HospitalAutomation
             Getir();
         }
 
-        private void button2_Click(object sender, EventArgs e)          //ÇIKAR BUTONU          HATALI  HATALI  HATALI  HATALI
+        private void button2_Click(object sender, EventArgs e)          //ÇIKAR BUTONU
         {
             try
             {
@@ -105,6 +99,7 @@ namespace HospitalAutomation
 
         private void button3_Click(object sender, EventArgs e)          //REÇETE ONAYLA BUTONU. BURADA DATABASE'E VERİ EKLENİR.
         {
+            
             receteIndex = 0;
             foreach (var ilac in ilacListe)
             {
@@ -112,30 +107,66 @@ namespace HospitalAutomation
             }
             MessageBox.Show(receteson);
             //this.Close();
+
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //prescriptions tablosu verileri
+            HastaTc();      //pID
+            DateTime date = DateTime.Now;   //date
+            date.ToShortDateString();
+            //prescr
+            SqlDataAdapter dap = new SqlDataAdapter("selec", con);
         }
 
-        private void dataGridViewRecete_CellClick(object sender, DataGridViewCellEventArgs e)
+        private int HastaTc()
+        {
+            int pID=0;
+            string tc = textBox1.Text;
+            SqlCommand cmd = new SqlCommand("SELECT [PatientID],[PatientTC] FROM [Patients] where [PatientTC]=@tc", con);
+            cmd.Parameters.AddWithValue("@tc", tc);
+            try
+            {
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                PrescriptionTablolar.Tables.Add().Load(dr);
+                pID =Convert.ToInt32( PrescriptionTablolar.Tables[1].Rows[0][0]);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return pID;
+        }
+
+        private void dataGridViewRecete_CellClick(object sender, DataGridViewCellEventArgs e)       //REÇETEYE TIKLADIĞIMIZ SATIRIN ID DEĞERİNİ VERİR.
         {
             silinecekID=Convert.ToInt32(dataGridViewRecete.Rows[e.RowIndex].Cells[0].Value);
         }
 
-        private void dataGridViewRecete_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //KONTROLLER
+        private void textBox2_TextChanged(object sender, EventArgs e)           //İLAÇLAR TABLOSUNDA ARAMA YAPMAK.
+        {
+            PrescriptionTablolar2.DataSource = dataGridViewIlaclar.DataSource;
+            PrescriptionTablolar2.Filter = string.Format("MedicineName LIKE '%{0}%'", textBox2.Text);
+        }
+
+        private void dataGridViewRecete_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)          //REÇETEYE İLAÇ EKLENDİĞİNDE REÇETE ONAYLA BUTONUNU AKTİF EDER
         {
             button3.Enabled = true;
         }
 
-        private void dataGridViewRecete_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        private void dataGridViewRecete_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)      //REÇETEDEN İLAÇ ÇIKARILDIĞINDA TABLONUN ELEMAN SAYISINA GÖRE REÇETE ONAYLA BUTONUNU INAKTİF EDER
         {
-            if (ilacListe.Count==0)
+            if (ilacListe.Count == 0)
             {
                 button3.Enabled = false;
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            PrescriptionTablolar2.Filter = string.Format("MedicineName LIKE '%{0}%'", textBox2.Text);
-            dataGridViewIlaclar.Refresh();
-        }
+
     }
 }
