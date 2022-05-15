@@ -38,7 +38,7 @@ namespace HospitalAutomation
                 cmd.Parameters.AddWithValue("@cinsiyet", Convert.ToInt32(cinsiyet));
                 cmd.Parameters.AddWithValue("@telno", txt_telno.Text);
                 cmd.Parameters.AddWithValue("@durum", chx_durum.Checked);
-
+              
                 con.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("İşlem Başarılı");
@@ -212,6 +212,19 @@ namespace HospitalAutomation
         private void btn_temizle_Click(object sender, EventArgs e)
         {
             Temizle();
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            //checkBox1.Checked = false;
+            //checkBox2.Checked = true;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            //checkBox2.Checked = false;
+            //checkBox1.Checked = true;
         }
     }
 }

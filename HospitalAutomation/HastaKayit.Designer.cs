@@ -192,6 +192,7 @@ namespace HospitalAutomation
             this.checkBox2.TabIndex = 16;
             this.checkBox2.Text = "Kadın";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox1
             // 
@@ -202,6 +203,7 @@ namespace HospitalAutomation
             this.checkBox1.TabIndex = 15;
             this.checkBox1.Text = "Erkek";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // btn_kaydet
             // 
@@ -315,7 +317,7 @@ namespace HospitalAutomation
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(987, 390);
+            this.ClientSize = new System.Drawing.Size(699, 390);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_temizle);
             this.Controls.Add(this.btn_sil);
