@@ -16,7 +16,7 @@ namespace HospitalAutomation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Prescription());
+            Application.Run(new HastaKayit());
         }
     }
 }

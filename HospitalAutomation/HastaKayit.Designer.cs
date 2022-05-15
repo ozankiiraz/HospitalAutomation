@@ -225,6 +225,7 @@ namespace HospitalAutomation
             this.btn_düzenle.TabIndex = 1;
             this.btn_düzenle.Text = "DÜZENLE";
             this.btn_düzenle.UseVisualStyleBackColor = false;
+            this.btn_düzenle.Click += new System.EventHandler(this.btn_düzenle_Click);
             // 
             // btn_sil
             // 
@@ -236,6 +237,7 @@ namespace HospitalAutomation
             this.btn_sil.TabIndex = 2;
             this.btn_sil.Text = "SİL";
             this.btn_sil.UseVisualStyleBackColor = false;
+            this.btn_sil.Click += new System.EventHandler(this.btn_sil_Click);
             // 
             // btn_temizle
             // 
@@ -247,6 +249,7 @@ namespace HospitalAutomation
             this.btn_temizle.TabIndex = 3;
             this.btn_temizle.Text = "TEMİZLE";
             this.btn_temizle.UseVisualStyleBackColor = false;
+            this.btn_temizle.Click += new System.EventHandler(this.btn_temizle_Click);
             // 
             // groupBox2
             // 
