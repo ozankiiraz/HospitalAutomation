@@ -23,7 +23,7 @@ namespace HospitalAutomation
 
         private void btn_kaydet_Click(object sender, EventArgs e)
         {
-            string selectsorgu = "INSERT Patients(PatientTC,PatientName,PatientLastname,PatientBirthDate,PatientGender,PatientPhoneNumber,Status) VALUES (@TCKN,@ad,@soyad,@dogumtarihi,@cinsiyet,@telno,@durum)";
+            //string selectsorgu = "INSERT Patients(PatientTC,PatientName,PatientLastname,PatientBirthDate,PatientGender,PatientPhoneNumber,Status) VALUES (@TCKN,@ad,@soyad,@dogumtarihi,@cinsiyet,@telno,@durum)";
             //SqlCommand cmd = new SqlCommand(selectsorgu, con);
             //cmd.Parameters.AddWithValue("@TCKN", txt_tc.Text);
             //cmd.Parameters.AddWithValue("@ad", txt_ad.Text);
@@ -104,6 +104,9 @@ namespace HospitalAutomation
             }
         }
 
+        private void HastaKayit_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

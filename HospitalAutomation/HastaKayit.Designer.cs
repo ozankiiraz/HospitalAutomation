@@ -42,6 +42,8 @@ namespace HospitalAutomation
             this.txt_telno = new System.Windows.Forms.TextBox();
             this.dtp_dt = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btn_kaydet = new System.Windows.Forms.Button();
             this.btn_düzenle = new System.Windows.Forms.Button();
             this.btn_sil = new System.Windows.Forms.Button();
@@ -52,8 +54,6 @@ namespace HospitalAutomation
             this.btn_hasta_ara = new System.Windows.Forms.Button();
             this.txt_hastatc = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -183,6 +183,26 @@ namespace HospitalAutomation
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hasta Kayıt";
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(274, 220);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(71, 21);
+            this.checkBox2.TabIndex = 16;
+            this.checkBox2.Text = "Kadın";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(161, 220);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(71, 21);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.Text = "Erkek";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // btn_kaydet
             // 
             this.btn_kaydet.BackColor = System.Drawing.Color.Silver;
@@ -287,26 +307,6 @@ namespace HospitalAutomation
             this.label7.TabIndex = 0;
             this.label7.Text = "T.C No : ";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(161, 220);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(71, 21);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Erkek";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(274, 220);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(71, 21);
-            this.checkBox2.TabIndex = 16;
-            this.checkBox2.Text = "Kadın";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
             // HastaKayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -321,6 +321,7 @@ namespace HospitalAutomation
             this.Controls.Add(this.btn_kaydet);
             this.Name = "HastaKayit";
             this.Text = "HastaKayit";
+            this.Load += new System.EventHandler(this.HastaKayit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
