@@ -53,8 +53,6 @@ namespace HospitalAutomation
 
         }
 
-
-
         private void btn_hasta_ara_Click(object sender, EventArgs e)
         {
             string sorgu1 = "select * from Patients where PatientTC = @patTC";
