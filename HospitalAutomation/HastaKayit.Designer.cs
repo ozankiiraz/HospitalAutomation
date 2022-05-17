@@ -209,9 +209,9 @@ namespace HospitalAutomation
             // 
             this.btn_kaydet.BackColor = System.Drawing.Color.Silver;
             this.btn_kaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_kaydet.Location = new System.Drawing.Point(454, 275);
+            this.btn_kaydet.Location = new System.Drawing.Point(459, 273);
             this.btn_kaydet.Name = "btn_kaydet";
-            this.btn_kaydet.Size = new System.Drawing.Size(95, 41);
+            this.btn_kaydet.Size = new System.Drawing.Size(118, 95);
             this.btn_kaydet.TabIndex = 0;
             this.btn_kaydet.Text = "KAYDET";
             this.btn_kaydet.UseVisualStyleBackColor = false;
@@ -221,9 +221,9 @@ namespace HospitalAutomation
             // 
             this.btn_düzenle.BackColor = System.Drawing.Color.Silver;
             this.btn_düzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_düzenle.Location = new System.Drawing.Point(455, 322);
+            this.btn_düzenle.Location = new System.Drawing.Point(583, 323);
             this.btn_düzenle.Name = "btn_düzenle";
-            this.btn_düzenle.Size = new System.Drawing.Size(95, 41);
+            this.btn_düzenle.Size = new System.Drawing.Size(118, 45);
             this.btn_düzenle.TabIndex = 1;
             this.btn_düzenle.Text = "DÜZENLE";
             this.btn_düzenle.UseVisualStyleBackColor = false;
@@ -231,23 +231,18 @@ namespace HospitalAutomation
             // 
             // btn_sil
             // 
-            this.btn_sil.BackColor = System.Drawing.Color.Silver;
-            this.btn_sil.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sil.Location = new System.Drawing.Point(555, 275);
+            this.btn_sil.Location = new System.Drawing.Point(0, 0);
             this.btn_sil.Name = "btn_sil";
-            this.btn_sil.Size = new System.Drawing.Size(95, 41);
-            this.btn_sil.TabIndex = 2;
-            this.btn_sil.Text = "SİL";
-            this.btn_sil.UseVisualStyleBackColor = false;
-            this.btn_sil.Click += new System.EventHandler(this.btn_sil_Click);
+            this.btn_sil.Size = new System.Drawing.Size(75, 23);
+            this.btn_sil.TabIndex = 16;
             // 
             // btn_temizle
             // 
             this.btn_temizle.BackColor = System.Drawing.Color.Silver;
             this.btn_temizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_temizle.Location = new System.Drawing.Point(555, 323);
+            this.btn_temizle.Location = new System.Drawing.Point(583, 273);
             this.btn_temizle.Name = "btn_temizle";
-            this.btn_temizle.Size = new System.Drawing.Size(95, 41);
+            this.btn_temizle.Size = new System.Drawing.Size(118, 45);
             this.btn_temizle.TabIndex = 3;
             this.btn_temizle.Text = "TEMİZLE";
             this.btn_temizle.UseVisualStyleBackColor = false;
@@ -264,7 +259,7 @@ namespace HospitalAutomation
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(454, 33);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(196, 225);
+            this.groupBox2.Size = new System.Drawing.Size(247, 229);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hasta Arama";
@@ -273,7 +268,7 @@ namespace HospitalAutomation
             // 
             this.textBox1.Location = new System.Drawing.Point(9, 132);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 22);
+            this.textBox1.Size = new System.Drawing.Size(196, 22);
             this.textBox1.TabIndex = 4;
             // 
             // lbl_soyadara
@@ -299,7 +294,7 @@ namespace HospitalAutomation
             // 
             this.txt_hastatc.Location = new System.Drawing.Point(9, 58);
             this.txt_hastatc.Name = "txt_hastatc";
-            this.txt_hastatc.Size = new System.Drawing.Size(164, 22);
+            this.txt_hastatc.Size = new System.Drawing.Size(196, 22);
             this.txt_hastatc.TabIndex = 1;
             // 
             // label7
@@ -317,7 +312,7 @@ namespace HospitalAutomation
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(699, 390);
+            this.ClientSize = new System.Drawing.Size(721, 390);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_temizle);
             this.Controls.Add(this.btn_sil);

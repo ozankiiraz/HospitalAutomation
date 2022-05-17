@@ -202,13 +202,6 @@ namespace HospitalAutomation
             }
 
         }
-
-        private void btn_sil_Click(object sender, EventArgs e)
-        {
-            Temizle();
-            btn_sil.Enabled = false;
-        }
-
         private void btn_temizle_Click(object sender, EventArgs e)
         {
             Temizle();
