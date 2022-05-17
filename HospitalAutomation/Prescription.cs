@@ -106,20 +106,59 @@ namespace HospitalAutomation
                 receteson += ilac.MedicineName + "\n";
             }
             MessageBox.Show(receteson);
-            //this.Close();
 
+            try
+            {
+                //PRESCRIPTION TABLOSUNA EKLEME
+                int id = HastaID();
+                DateTime date = DateTime.Now;   //date
+                date.ToShortDateString();
+                con.Open();
+                SqlCommand prescriptionEkle = new SqlCommand("INSERT INTO Prescriptions (Patient_ID,PrescriptionDate) VALUES (@patientID,@date)", con);
+                prescriptionEkle.Parameters.AddWithValue("@patientID", id);
+                prescriptionEkle.Parameters.AddWithValue("@date", date);
+                prescriptionEkle.ExecuteNonQuery();
+
+                MessageBox.Show("Prescription tablosuna veri başarıyla eklendi.");
+
+                //PRESCRIPTION TABLOSUNDAN PrescriptionID ÇEKME
+                SqlDataAdapter dap = new SqlDataAdapter("SELECT IDENT_CURRENT('dbo.Prescriptions')", con);
+                DataTable dt = new DataTable();
+                dap.Fill(dt);
+                int prescriptionID = Convert.ToInt32(dt.Rows[0][0]);
+                con.Close();
+                //PrescriptionDetails TABLOSUNA VERİLERİ EKLEME
+                foreach (var item in ilacListe)
+                {
+                    try
+                    {
+                        con.Open();
+                        SqlCommand prescriptionDetailsEkle = new SqlCommand("INSERT INTO PrescriptionDetails(Prescription_ID,Medicine_ID) VALUES (@prescID,@medID)", con);
+                        prescriptionDetailsEkle.Parameters.AddWithValue("@prescID", prescriptionID);
+                        prescriptionDetailsEkle.Parameters.AddWithValue("@medID", item.MedicineId);
+                        prescriptionDetailsEkle.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + "line141");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "line129");
+            }
+            MessageBox.Show("Reçete başarıyla oluşturuldu.");
+            System.Threading.Thread.Sleep(2000);
+            this.Close();
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            //prescriptions tablosu verileri
-            HastaTc();      //pID
-            DateTime date = DateTime.Now;   //date
-            date.ToShortDateString();
-            //prescr
-            SqlDataAdapter dap = new SqlDataAdapter("selec", con);
+            
         }
 
-        private int HastaTc()
+        private int HastaID()
         {
             int pID=0;
             string tc = textBox1.Text;
@@ -135,7 +174,7 @@ namespace HospitalAutomation
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + "line153");
             }
             return pID;
         }
