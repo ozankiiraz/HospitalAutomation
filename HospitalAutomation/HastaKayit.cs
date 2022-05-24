@@ -219,5 +219,7 @@ namespace HospitalAutomation
             //checkBox2.Checked = false;
             //checkBox1.Checked = true;
         }
+
+    
     }
 }

@@ -47,13 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DoctorUI.cs">
+    <Compile Include="DoctorScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoctorUI.Designer.cs">
-      <DependentUpon>DoctorUI.cs</DependentUpon>
+    <Compile Include="DoctorScreen.Designer.cs">
+      <DependentUpon>DoctorScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Ilac.cs" />
+    <Compile Include=".cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Prescription.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +93,20 @@
     <Compile Include="Randevu.Designer.cs">
       <DependentUpon>Randevu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DoctorUI.resx">
-      <DependentUpon>DoctorUI.cs</DependentUpon>
+    <Compile Include="SecretaryScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecretaryScreen.Designer.cs">
+      <DependentUpon>SecretaryScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DoctorScreen.resx">
+      <DependentUpon>DoctorScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HastaKayit.resx">
       <DependentUpon>HastaKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include=".resx">
+      <DependentUpon>.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -114,6 +130,9 @@
     <EmbeddedResource Include="Randevu.resx">
       <DependentUpon>Randevu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SecretaryScreen.resx">
+      <DependentUpon>SecretaryScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -129,6 +148,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Tik-Isareti-Nasil-Yapilir.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctoricon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hastaicon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -159,7 +159,7 @@ namespace HospitalAutomation
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Bisque;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.txt_tc);
@@ -231,10 +231,11 @@ namespace HospitalAutomation
             // 
             // btn_sil
             // 
-            this.btn_sil.Location = new System.Drawing.Point(0, 0);
+            this.btn_sil.Location = new System.Drawing.Point(103, 182);
             this.btn_sil.Name = "btn_sil";
-            this.btn_sil.Size = new System.Drawing.Size(75, 23);
+            this.btn_sil.Size = new System.Drawing.Size(102, 37);
             this.btn_sil.TabIndex = 16;
+
             // 
             // btn_temizle
             // 
@@ -250,9 +251,10 @@ namespace HospitalAutomation
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Cornsilk;
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.lbl_soyadara);
+            this.groupBox2.Controls.Add(this.btn_sil);
             this.groupBox2.Controls.Add(this.btn_hasta_ara);
             this.groupBox2.Controls.Add(this.txt_hastatc);
             this.groupBox2.Controls.Add(this.label7);
@@ -315,7 +317,6 @@ namespace HospitalAutomation
             this.ClientSize = new System.Drawing.Size(721, 390);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_temizle);
-            this.Controls.Add(this.btn_sil);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_düzenle);
             this.Controls.Add(this.btn_kaydet);

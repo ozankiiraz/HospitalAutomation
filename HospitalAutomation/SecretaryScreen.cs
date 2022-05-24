@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace HospitalAutomation
 {
-    public partial class DoctorUI : Form
+    public partial class SecretaryScreen : Form
     {
-        public DoctorUI()
+        public SecretaryScreen()
         {
             InitializeComponent();
-        }
-
-        private void DoctorUI_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
