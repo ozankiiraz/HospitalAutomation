@@ -53,6 +53,11 @@
     <Compile Include="DoctorUI.Designer.cs">
       <DependentUpon>DoctorUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOSPITALDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HOSPITALDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ilac.cs" />
     <Compile Include="Prescription.cs">
       <SubType>Form</SubType>
@@ -114,6 +119,17 @@
     <EmbeddedResource Include="Randevu.resx">
       <DependentUpon>Randevu.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="HOSPITALDataSet.xsc">
+      <DependentUpon>HOSPITALDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HOSPITALDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HOSPITALDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HOSPITALDataSet.xss">
+      <DependentUpon>HOSPITALDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
