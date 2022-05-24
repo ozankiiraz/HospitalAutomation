@@ -58,6 +58,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HOSPITALDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HOSPITALDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HOSPITALDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HOSPITALDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HOSPITALDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ilac.cs" />
     <Compile Include="Prescription.cs">
       <SubType>Form</SubType>
@@ -129,6 +139,28 @@
     </None>
     <None Include="HOSPITALDataSet.xss">
       <DependentUpon>HOSPITALDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HOSPITALDataSet1.xsc">
+      <DependentUpon>HOSPITALDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HOSPITALDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HOSPITALDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HOSPITALDataSet1.xss">
+      <DependentUpon>HOSPITALDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HOSPITALDataSet2.xsc">
+      <DependentUpon>HOSPITALDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="HOSPITALDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HOSPITALDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HOSPITALDataSet2.xss">
+      <DependentUpon>HOSPITALDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
