@@ -207,7 +207,7 @@ namespace HospitalAutomation
             // 
             // btn_kaydet
             // 
-            this.btn_kaydet.BackColor = System.Drawing.Color.Silver;
+            this.btn_kaydet.BackColor = System.Drawing.Color.DarkSalmon;
             this.btn_kaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_kaydet.Location = new System.Drawing.Point(459, 273);
             this.btn_kaydet.Name = "btn_kaydet";
@@ -219,7 +219,7 @@ namespace HospitalAutomation
             // 
             // btn_düzenle
             // 
-            this.btn_düzenle.BackColor = System.Drawing.Color.Silver;
+            this.btn_düzenle.BackColor = System.Drawing.Color.DarkTurquoise;
             this.btn_düzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_düzenle.Location = new System.Drawing.Point(583, 323);
             this.btn_düzenle.Name = "btn_düzenle";
@@ -235,11 +235,10 @@ namespace HospitalAutomation
             this.btn_sil.Name = "btn_sil";
             this.btn_sil.Size = new System.Drawing.Size(102, 37);
             this.btn_sil.TabIndex = 16;
-
             // 
             // btn_temizle
             // 
-            this.btn_temizle.BackColor = System.Drawing.Color.Silver;
+            this.btn_temizle.BackColor = System.Drawing.Color.LemonChiffon;
             this.btn_temizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_temizle.Location = new System.Drawing.Point(583, 273);
             this.btn_temizle.Name = "btn_temizle";
@@ -313,7 +312,7 @@ namespace HospitalAutomation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Linen;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(721, 390);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_temizle);

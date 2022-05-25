@@ -27,13 +27,17 @@ namespace HospitalAutomation
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Hastane"].ConnectionString);
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text != "" && textBox2.Text != "")
+            if(comboBox1.SelectedIndex == -1)
             {
-                 SqlDataAdapter dap = new SqlDataAdapter("Select * from Users where KullaniciAdi = @Ka AND Password = @psw", con);
+                MessageBox.Show("Lütfen seçim yapınız!! ");
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                textBox2.UseSystemPasswordChar = true; // parola gizleme
+                SqlDataAdapter dap = new SqlDataAdapter("Select * from Users where KullaniciAdi = @Ka AND Password = @psw AND Status=1 ", con);
                 dap.SelectCommand.Parameters.AddWithValue("@Ka", textBox1.Text);
                 dap.SelectCommand.Parameters.AddWithValue("@psw", textBox2.Text);
-                textBox2.UseSystemPasswordChar = true; // parola gizleme
-                DataTable dt = new DataTable();    
+                DataTable dt = new DataTable();
                 dap.Fill(dt);
                 if (dt.Rows.Count > 0)
                 {
@@ -42,14 +46,18 @@ namespace HospitalAutomation
                     DoctorScreen ds = new DoctorScreen();
                     ds.Show();
                 }
-                            
+                else
+                {
+                    label4.Text = "Kullanıcı adı veya şifre hatalı !! ";
+                }
+
             }
-            else if (textBox1.Text != "" && textBox2.Text != "")
-           {
-                SqlDataAdapter dap = new SqlDataAdapter("Select * from UserSecretary where SecKullaniciAdi = @Ka AND Password = @psw", con);
-                dap.SelectCommand.Parameters.AddWithValue("@Ka", textBox1.Text);
-                dap.SelectCommand.Parameters.AddWithValue("@psw", textBox2.Text);
+            else if (comboBox1.SelectedIndex == 0)
+            {
                 textBox2.UseSystemPasswordChar = true; // parola gizleme
+                SqlDataAdapter dap = new SqlDataAdapter("Select * from Users where KullaniciAdi = @SKa AND Password = @Spsw AND Status=0", con);
+                dap.SelectCommand.Parameters.AddWithValue("@SKa", textBox1.Text);
+                dap.SelectCommand.Parameters.AddWithValue("@Spsw", textBox2.Text);
                 DataTable dt = new DataTable();
                 dap.Fill(dt);
                 if (dt.Rows.Count > 0)
@@ -59,15 +67,14 @@ namespace HospitalAutomation
                     SecretaryScreen sc = new SecretaryScreen();
                     sc.Show();
                 }
-            }
-            else
-            {
-                label4.Text = "Kullanıcı adı veya şifre hatalı !! ";
+                else
+                {
+                    label4.Text = "Kullanıcı adı veya şifre hatalı !! ";
+                }
 
-                
             }
-                
-        }
+        }  
+
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {

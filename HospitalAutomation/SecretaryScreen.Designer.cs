@@ -44,7 +44,7 @@ namespace HospitalAutomation
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1172, 46);
+            this.panel1.Size = new System.Drawing.Size(1006, 46);
             this.panel1.TabIndex = 0;
             // 
             // button2
@@ -72,16 +72,16 @@ namespace HospitalAutomation
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 47);
+            this.panel2.Location = new System.Drawing.Point(0, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1172, 576);
+            this.panel2.Size = new System.Drawing.Size(1006, 450);
             this.panel2.TabIndex = 1;
             // 
             // SecretaryScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 623);
+            this.ClientSize = new System.Drawing.Size(1006, 500);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;

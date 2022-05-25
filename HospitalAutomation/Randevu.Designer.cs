@@ -48,28 +48,19 @@ namespace HospitalAutomation
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            
             this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-           
-          
             this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            
-          
             this.doctorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-         
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-          
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
-           
             ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
-          
             ((System.ComponentModel.ISupportInitialize)(this.doctorsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.textBox3);
@@ -86,7 +77,7 @@ namespace HospitalAutomation
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 17);
+            this.groupBox1.Location = new System.Drawing.Point(24, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -121,24 +112,27 @@ namespace HospitalAutomation
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button4.ImageIndex = 3;
-            this.button4.Location = new System.Drawing.Point(243, 30);
+            this.button4.Location = new System.Drawing.Point(247, 25);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(51, 38);
             this.button4.TabIndex = 43;
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Text = "ARA";
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LightBlue;
             this.button2.ImageIndex = 1;
-            this.button2.Location = new System.Drawing.Point(239, 250);
+            this.button2.Location = new System.Drawing.Point(201, 250);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 40);
+            this.button2.Size = new System.Drawing.Size(90, 34);
             this.button2.TabIndex = 56;
+            this.button2.Text = "GUNCELLE";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -163,14 +157,14 @@ namespace HospitalAutomation
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.LightBlue;
+            this.button1.BackColor = System.Drawing.Color.LightCoral;
             this.button1.ImageIndex = 0;
             this.button1.Location = new System.Drawing.Point(134, 250);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 40);
+            this.button1.Size = new System.Drawing.Size(59, 34);
             this.button1.TabIndex = 55;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Text = "EKLE";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -248,8 +242,8 @@ namespace HospitalAutomation
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.SteelBlue;
-            this.button3.Location = new System.Drawing.Point(313, 17);
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button3.Location = new System.Drawing.Point(337, 13);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(691, 42);
@@ -261,7 +255,7 @@ namespace HospitalAutomation
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(313, 67);
+            this.dataGridView1.Location = new System.Drawing.Point(337, 63);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -269,48 +263,15 @@ namespace HospitalAutomation
             this.dataGridView1.TabIndex = 47;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // hOSPITALDataSet
-            // 
-  
-            // 
-            // patientsBindingSource
-            // 
-       
-            // 
-            // patientsTableAdapter
-            // 
-      
-            // 
-            // hOSPITALDataSet1
-            // 
-            
-            // 
-            // departmentsBindingSource
-            // 
-
-            // 
-            // departmentsTableAdapter
-            // 
-            
-            // 
-            // hOSPITALDataSet2
-            // 
-           
-            // 
             // doctorsBindingSource
             // 
             this.doctorsBindingSource.DataMember = "Doctors";
-         
-            // 
-            // doctorsTableAdapter
-            // 
-           
             // 
             // Randevu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 406);
+            this.ClientSize = new System.Drawing.Size(1038, 390);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
@@ -320,7 +281,10 @@ namespace HospitalAutomation
             this.Load += new System.EventHandler(this.Randevu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-         
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
 		}

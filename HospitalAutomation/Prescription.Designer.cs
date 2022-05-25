@@ -91,10 +91,10 @@ namespace HospitalAutomation
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Lime;
-            this.button3.Location = new System.Drawing.Point(886, 325);
+            this.button3.Location = new System.Drawing.Point(815, 325);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 74);
+            this.button3.Size = new System.Drawing.Size(163, 74);
             this.button3.TabIndex = 4;
             this.button3.Text = "REÇETE ONAYLA";
             this.button3.UseVisualStyleBackColor = false;
@@ -146,7 +146,7 @@ namespace HospitalAutomation
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(996, 401);
+            this.ClientSize = new System.Drawing.Size(993, 422);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
