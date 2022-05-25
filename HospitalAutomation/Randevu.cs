@@ -21,12 +21,7 @@ namespace HospitalAutomation
 		BindingSource bs;
 		private void Randevu_Load(object sender, EventArgs e)
 		{
-            // TODO: This line of code loads data into the 'hOSPITALDataSet2.Doctors' table. You can move, or remove it, as needed.
-            this.doctorsTableAdapter.Fill(this.hOSPITALDataSet2.Doctors);
-            // TODO: This line of code loads data into the 'hOSPITALDataSet1.Departments' table. You can move, or remove it, as needed.
-            this.departmentsTableAdapter.Fill(this.hOSPITALDataSet1.Departments);
-            // TODO: This line of code loads data into the 'hOSPITALDataSet.Patients' table. You can move, or remove it, as needed.
-            this.patientsTableAdapter.Fill(this.hOSPITALDataSet.Patients);
+    
 
 		}
 

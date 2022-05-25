@@ -16,5 +16,26 @@ namespace HospitalAutomation
         {
             InitializeComponent();
         }
+        private void FormGetir(Form frm)
+        {
+            panel2.Controls.Clear();
+            frm.MdiParent = this; // bu sayfada aç diyorum
+            frm.FormBorderStyle = FormBorderStyle.None; // oynatama diye sabitledik
+            panel2.Controls.Add(frm);
+            frm.Show();
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HastaKayit hk = new HastaKayit();
+            FormGetir(hk);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Randevu ran = new Randevu();
+            FormGetir(ran);
+
+        }
     }
 }

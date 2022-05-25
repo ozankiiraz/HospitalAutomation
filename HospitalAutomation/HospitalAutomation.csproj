@@ -53,21 +53,6 @@
     <Compile Include="DoctorScreen.Designer.cs">
       <DependentUpon>DoctorScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="HOSPITALDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HOSPITALDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HOSPITALDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HOSPITALDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HOSPITALDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HOSPITALDataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Ilac.cs" />
     <Compile Include=".cs">
       <SubType>Form</SubType>
@@ -145,39 +130,9 @@
     <EmbeddedResource Include="Randevu.resx">
       <DependentUpon>Randevu.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="HOSPITALDataSet.xsc">
-      <DependentUpon>HOSPITALDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="HOSPITALDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HOSPITALDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HOSPITALDataSet.xss">
-      <DependentUpon>HOSPITALDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="HOSPITALDataSet1.xsc">
-      <DependentUpon>HOSPITALDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="HOSPITALDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HOSPITALDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HOSPITALDataSet1.xss">
-      <DependentUpon>HOSPITALDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="HOSPITALDataSet2.xsc">
-      <DependentUpon>HOSPITALDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="HOSPITALDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HOSPITALDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HOSPITALDataSet2.xss">
-      <DependentUpon>HOSPITALDataSet2.xsd</DependentUpon>
-    </None>
+    <EmbeddedResource Include="SecretaryScreen.resx">
+      <DependentUpon>SecretaryScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

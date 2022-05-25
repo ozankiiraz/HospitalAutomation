@@ -17,10 +17,6 @@ namespace HospitalAutomation
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void FormGetir(Form frm)
         {
             panel2.Controls.Clear();
